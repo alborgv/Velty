@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3062f0;
+  --color-primary-hover: #2953cc;
+
+  --font-condensed: 'Roboto Condensed', sans-serif;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  --font-sora: "Sora", sans-serif;
+
+}

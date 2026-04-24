@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: velty_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DEBUG=1
+    networks:
+      - velty_network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: velty_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - velty_network
+    depends_on:
+      - backend
+
+networks:
+  velty_network:
+    driver: bridge
